@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root{
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+
+    --Body-background: linear-gradient(180deg, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    --Card-background: #ffff;
+
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body{
+    background: var(--Body-background);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+}
+/* container part 1*/
+#container{
+    background: var(--Card-background);
+    width: 800px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 1px 7px 2px 1px rgba(0,0,0,0.1)
+}
+
+#container .part_1{
+    background: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 110% 62%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+#container .part_1 .girl_img{
+    background: url("../images/illustration-woman-online-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 400px;
+    height: 300px;
+    margin-left: -4rem;
+    margin-top: 6.5rem;
+}
+
+#container .box_img{
+    width: 150px;
+    position: absolute;
+    top: 45%;
+    left: -9%;
+    z-index: 9999;
+}
+#container .box_img img{
+    width: 100%;
+}
+/* Container part 2 */
+#container .part_2{
+    padding: 3rem 5rem 0 0;
+ 
+}
+#container .part_2 .title_part h1{
+    font-weight: 700;
+    color: var(--Very-dark-desaturated-blue)
+}
+
+#container .part_2 .que_part{
+    margin-top: 2rem;
+    width: 300px;
+}
+
+.box{
+    position: relative;
+    margin-top: 1.2rem;
+}
+.box:after{
+    content: "";
+    position: absolute;
+    top: 120%;
+    width: 100%;
+    height: 1px;
+    background: var(--Light-grayish-blue);
+}
+.box .head_part{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+.box .head_part:hover > h2{
+    color: var(--Soft-red)
+}
+.box .head_part h2{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--Dark-grayish-blue)
+}
+.box .head_part.active h2{
+    color: var(--Very-dark-desaturated-blue);
+    font-weight: 700;
+}
+.btn_arrow{
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.2rem;
+    transition: all .2s linear;
+}
+.btn_arrow.active img{
+    transform: rotate(180deg)
+}
+.box .text_part{
+    margin-top: 0.5rem;
+    display: none;
+}
+.box .text_part.active{
+    display: block;
+}
+.box .text_part p{
+    font-size: 12px;
+    color: var(--Dark-grayish-blue)
+    
+}
+
+/* Footer Part */
+#footer a{
+    text-decoration: none;
+    color: var(--Soft-red);
+    font-weight: 700;
+    transition: all .2s linear;
+}
+#footer a:hover{
+    color: white;
+}
+
+/* For Medeium to small screen viewers */
+@media (max-width: 800px){
+    main{
+        padding: 2rem;
+    }
+    #container{
+        width: 100%;
+        height: 500px;
+        flex-direction: column;
+    }
+    #container .part_1{
+        background: url(../images/bg-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 80%;
+        width: 100%;
+        height: 200px;
+        position: absolute;
+        top: -5rem;
+        overflow: none;
+    }
+    #container .part_1 .girl_img{
+        background: url(../images/illustration-woman-online-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 80%;
+        margin-left: 0;
+        margin-top: -1rem;
+    }
+
+    #container .box_img{
+        display: none;
+    }
+
+    #container .part_2{
+        padding: 1rem;
+        margin: 8rem 0 2rem 0;
+    }
+
+    #container .part_2 .title_part h1{
+        text-align: center;
+    }
+    #container .part_2 .que_part{
+        width: 100%;
+    }
+}
